@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Penggunaan Operator dalam Javascript</title>
+</head>
+<body>
+    <h2>Contoh Penggunaan Operator dalam Javascript</h2>
+    <p id="arithmetic"></p>
+    <p id="comparison"></p>
+    <p id="logical"></p>
+    <p id="assignment"></p>
+
+    <script>
+        let a = 9;
+        let b = 4;
+        let arithmeticResult = `
+            Addition: ${a+b}<br>
+            Substraction: ${a-b}<br>
+            Multiplication: ${a*b}<br>
+            Division: ${a/b}<br>
+            Modulus: ${a%b}<br>
+            Exponentiation: ${a**b}<br>
+            Increment: ${++a}<br>
+            Decrement: ${--b}<br>
+            `;
+
+        document.getElementById("arithmetic").innerHTML = "Nilai dari arithmetic: " + arithmeticResult
+
+        let x = 9;
+        let y = 4;
+        let comparisonResult = `
+            Equal: ${x == y}<br>
+            Not Equal: ${x != y}<br>
+            Strict equal: ${x === y}<br>
+            Strict not equal: ${x !== y}<br>
+            Greater than: ${x > y}<br>
+            Less than: ${x < y}<br>
+            Greater than or equal: ${x >= y}<br>
+            Less than or equal: ${x <= y}<br> 
+            `;
+        document.getElementById("comparison").innerHTML = "Hasil dari comparison: " + comparisonResult
+
+        let p = true;
+        let q = false;
+        let logicalResult = `
+        AND: ${p && q}<br>
+        OR: ${p || q}<br>
+        NOT: ${!p}<br>
+        Ternary: ${p ? "True":"False"}<br>
+        `;
+        document.getElementById("logical").innerHTML = "Nilai dari logical: " + logicalResult
+        
+        let m =10;
+        m += 5;
+        m -= 3;
+        m *= 2;
+        m /= 4;
+        m %= 3;
+        let assignmentResult = Final value of m:  ${m};
+        document.getElementById("assignment").innerHTML = assignmentResult;
+    </script>
+</body>
+</html>

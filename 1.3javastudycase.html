@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Mahasiswa</title>
+</head>
+<body>
+    <h2>Penilaian Grade Mahasiswa berdasarkan IPK</h2>
+    <label for ="ipk">Masukkan IPK Mahasiswa:</label>
+    <input type="number" id="ipk" step="0.01" min="0" max="4">
+    <button onclick="tentukanGrade()">Tentukan Grade</button>
+    <p id="hasil"></p>
+
+     <!-- Counting arrays -->
+     <h2>Counting Array</h2>
+     <button onclick="countArray()">Count Array</button>
+     <p id="array"></p>
+     <p id="total"></p>
+     <p id="average"></p>
+     <p id="minimum"></p>
+     <p id="maximum"></p>
+    <script>
+        // tebak IPK
+        function tentukanGrade() { 
+            let ipk = parseFloat(document.getElementById("ipk").value);
+            let grade = " ";
+            if (ipk > 3.5) {
+                grade = "Cumlaude"
+            } else if (ipk >= 3) {
+                grade = "Sangat Baik";
+            } else {
+                grade = "Cukup";
+            }
+            document.getElementById("hasil").innerHTML = "Grade: " + grade;
+        }
+
+        for (let i = 0; i < 5; i++) {
+            console.log(i);
+        }
+
+        // // Tebak Angka
+        // const targetNumber = Math.floor(Math.random() * 100) + 1;
+        //     // Variabel untuk menyimpan jumlah percobaan
+        //     const targetNumber = Math.floor(Math.random() * 100) + 1;
+
+        //     // Variabel untuk menyimpan jumlah percobaan
+        //     let attempts = 0;
+        //     let guess = 0;
+
+        //     // Loop hingga tebakan benar
+        //     while (guess !== targetNumber) {
+        //         // Buat tebakan random
+        //         guess = Math.floor(Math.random() * 100) + 1;
+        //         attempts++;
+        //     }
+        //     console.log(`Tebakan berhasil setelah ${attempts} kali percobaan. Angka yang ditebak adalah ${targetNumber}.`);
+            
+        //
+            let numbers = [];
+            for (let i = 0; i < 10; i++) {
+                numbers.push(Math.floor(Math.random() * 100) + 1);
+            }
+
+            console.log("Array of random numbers:", numbers);
+
+            // Initialize variables for total, min, and max
+            let total = 0;
+            let min = numbers[0];
+            let max = numbers[0];
+
+            // Calculate total, min, and max
+            for(let i = 0; i < numbers.length; i++) {
+                total += numbers[i];
+            }
+
+            // Calculate the average
+            let average = total / numbers.length;
+
+            // Output the results
+            console.log("Total:", total);
+            console.log("Average:", average);
+            console.log("Minimum:", min);
+            console.log("Maximum:", max);
+
+
+            function countArray() {
+        let numbers = [];
+        for (let i = 0; i < 10; i++) {
+          numbers.push(Math.floor(Math.random() * 100) + 1);
+        }
+
+        let total = 0;
+        let minimum = numbers[0];
+        let maximum = numbers[0];
+
+        for (let i = 0; i < numbers.length; i++) {
+          total += numbers[i];
+          if (numbers[i] < minimum) {
+            minimum = numbers[i];
+          }
+          if (numbers[i] > maximum) {
+            maximum = numbers[i];
+          }
+        }
+
+        let average = total / numbers.length;
+
+        document.getElementById("array").innerHTML = `Array: [${numbers}]`;
+        document.getElementById("total").innerHTML = `Total: ${total}`;
+        document.getElementById("average").innerHTML = `Average: ${average}`;
+        document.getElementById("minimum").innerHTML = `Minimum: ${minimum}`;
+        document.getElementById("maximum").innerHTML = `Maximum: ${maximum}`;
+      }
+    </script>
+</body>
+</html>
